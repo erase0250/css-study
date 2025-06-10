@@ -1,0 +1,15 @@
+.spinner {
+    width: 4rem;
+    height: 4rem;
+    border: 0.375rem solid #60a5fa;
+    border-left-color: transparent; /* 스피너 한쪽만 투명으로 설정 */
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    /* to는 100%와 동일함 */
+    to {
+        transform: rotate(360deg);
+    }
+}
