@@ -1,0 +1,61 @@
+.input-data {
+    position: relative;
+    width: 200px;
+    margin-top: 40px;
+}
+
+.input-data input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    background: none;
+    color: #000;
+}
+
+.input-data input:focus {
+    outline: none;
+}
+
+.input-data label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-size: 16px;
+    color: #666;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* ~ (형제 선택자): 같은 부모(.input-data) 안에서 input 다음에 위치한 label에 적용 */
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+    top: -10px;
+    font-size: 13px;
+    color: #4158d0;
+}
+
+.input-data .underline {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.input-data .underline::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #4158d0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.input-data input:focus ~ .underline::before,
+.input-data input:valid ~ .underline::before {
+    transform: scaleX(1);
+}
