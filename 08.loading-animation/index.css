@@ -1,0 +1,45 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 30px);
+    gap: 0;
+    transform: rotateX(180deg);
+}
+
+.box {
+    background-color: black;
+    height: 30px;
+    width: 30px;
+    animation: scale-change 1.4s infinite ease-in-out;
+}
+
+.box:nth-child(2),
+.box:nth-child(4) {
+    animation-delay: 0.1s;
+}
+
+.box:nth-child(3),
+.box:nth-child(5),
+.box:nth-child(7) {
+    animation-delay: 0.2s;
+}
+
+.box:nth-child(6),
+.box:nth-child(8) {
+    animation-delay: 0.3s;
+}
+
+.box:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+@keyframes scale-change {
+    0%,
+    70%,
+    100% {
+        /* scale3d(x, y, z): 요소를 x(가로), y(세로), z(깊이) 방향으로 확대/축소하는 3D 변형 함수 */
+        transform: scale3d(1, 1, 1); /* 원래 크기 (축소X) */
+    }
+    35% {
+        transform: scale3d(0, 0, 1); /* 가로, 세로를 0으로 축소하여 안 보임 */
+    }
+}
